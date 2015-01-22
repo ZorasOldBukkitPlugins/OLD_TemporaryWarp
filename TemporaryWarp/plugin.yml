@@ -1,0 +1,55 @@
+name: TemporaryWarp
+version: 1.0.8
+description: Temporarly warps a player to a destination
+author: MrZoraman
+main: com.mrz.dyndns.server.TemporaryWarp.TemporaryWarp
+prefix: TWarp
+depend: [Vault]
+loadbefore: [Vault]
+commands:
+  twarp:
+permissions:
+  twarp.use:
+    default: false
+  twarp.list:
+    default: false
+  twarp.info:
+    default: false
+  twarp.set:
+    default: op
+  twarp.clear:
+    default: op
+  twarp.time:
+    default: op
+  twarp.cost:
+    default: op
+  twarp.return:
+    default: op
+  twarp.reload:
+    default: op
+  twarp.default:
+    default: op
+  twarp.other:
+    default: op
+  twarp.loc:
+    default: op
+  twarp.admin:
+    default: op
+    children:
+      twarp.set: true
+      twarp.clear: true
+      twarp.time: true
+      twarp.cost: true
+      twarp.return: true
+      twarp.reload: true
+      twarp.default: true
+      twarp.other: true
+      twarp.loc: true
+      twarp.user: true
+  twarp.user:
+    default: false
+    children:
+      twarp.use: true
+      twarp.list: true
+      twarp.info: true
+  
